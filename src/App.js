@@ -85,6 +85,7 @@ class App extends React.Component {
           return this.setState({ searchResults: [] });
 
         const books = results.map((resultBook) => {
+          resultBook.shelf='none';
           this.state.myReads.forEach((book) => {
             if (book.id === resultBook.id) resultBook.shelf = book.shelf;
           });
